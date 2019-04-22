@@ -4,12 +4,12 @@
 \alias{getGeneOrthos}
 \title{get Gene Orthologs}
 \usage{
-getGeneOrthos(input_org, comp_org, gene)
+getGeneOrthos(input_org, output_org, gene)
 }
 \arguments{
 \item{input_org}{Species you are starting from. This should be in the latin name format. i.e. Human, Homo Sapien should be "hsapiens"}
 
-\item{comp_org}{Species you want to know the orthologs in. Same format as input_org.}
+\item{output_org}{Species you want to know the orthologs in. Same format as input_org.}
 
 \item{gene}{Ensembl ID of gene in the starting species.}
 }

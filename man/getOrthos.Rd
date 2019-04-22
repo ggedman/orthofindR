@@ -2,14 +2,16 @@
 % Please edit documentation in R/orthology.R
 \name{getOrthos}
 \alias{getOrthos}
-\title{get Orthologs}
+\title{getOrthologs}
 \usage{
-getOrthos(input_org, comp_org)
+getOrthos(input_org, output_org, one2one)
 }
 \arguments{
 \item{input_org}{Species you are starting from. This should be in the latin name format. i.e. Human, Homo Sapien should be "hsapiens"}
 
-\item{comp_org}{Species you want to know the orthologs in. Same format as input_org.}
+\item{output_org}{Species you want to know the orthologs in. Same format as input_org.}
+
+\item{one2one}{Specifies if one-2-one orthology is perferred. If set to TRUE, will only return orthology for one-2-one orthologs}
 }
 \value{
 data frame with all one-to-one orthologs between specified species

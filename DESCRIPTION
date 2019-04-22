@@ -6,7 +6,7 @@ Description: This package will find  all one-to-one orthologs (or a given for a 
       between two given species. The user defines a startin species and the species they wish 
       to know orthologous genes, and using biomaRt, will be returned a data frame of all 
       one-to-one orthologs. The user can also specify a specific gene instead of searching all. 
-Depends: R (>= 3.5.0)
+Depends: R (>= 2.15)
 License: GNU General Public License
 Encoding: UTF-8
 LazyData: true
