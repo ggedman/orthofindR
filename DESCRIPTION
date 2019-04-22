@@ -1,0 +1,15 @@
+Package: OrthofindR
+Title: Tool for defining gene orthology across species 
+Version: 1.0
+Authors@R: "'Gregory Gedman <ggedman@rockefeller.edu> [aut, cre]'"
+Description: This package will find  all one-to-one orthologs (or a given for a given gene) 
+      between two given species. The user defines a startin species and the species they wish 
+      to know orthologous genes, and using biomaRt, will be returned a data frame of all 
+      one-to-one orthologs. The user can also specify a specific gene instead of searching all. 
+Depends: R (>= 3.5.0)
+License: GNU General Public License
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Imports:
+    biomaRt
