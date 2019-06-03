@@ -11,12 +11,12 @@
 #' @export
 getOrthos <- function(input_org,output_org,one2one) {
   tmp_input <- paste(input_org,"_gene_ensembl",sep = "")
-  tmp_mart <- useMart("ensembl", dataset = tmp_input) 
+  tmp_mart <- useMart("ensembl", dataset = tmp_input,host = "www.ensembl.org",ensemblRedirect = FALSE)
   tmp_attr <- listAttributes(tmp_mart)
   tmp_genes <- getBM(attributes = c("ensembl_gene_id", "gene_biotype"), mart = tmp_mart)
   tmp_genes <- tmp_genes[grep("protein_coding",tmp_genes$gene_biotype),]
   attr_names <- tmp_attr[grep(output_org,tmp_attr$name),"name"]
-  tmp_orthos <- getBM(attributes = c("ensembl_gene_id","external_gene_name",attr_names), filters = "ensembl_gene_id",values = tmp_genes$ensembl_gene_id, mart = tmp_mart)
+  tmp_orthos <- getBM(attributes = c("ensembl_gene_id","external_gene_name",attr_names), filters = "ensembl_gene_id",values = tmp_genes$ensembl_gene_id, mart = tmp_mart)  
   
   if(one2one == TRUE){
   tmp_orthos <- tmp_orthos[grep("ortholog_one2one",tmp_orthos[,paste(output_org,"_homolog_orthology_type",sep = "")]),]
